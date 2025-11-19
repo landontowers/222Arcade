@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>MiniGames</title>
+    <meta name="description" content="Fast-paced 2-player minigames">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/retro.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#222034">
+</head>
+
+<body class="crt">
+    <div id="app">
+        <!-- Main Menu -->
+        <div id="menu" class="screen active">
+            <h1>MINIGAMES</h1>
+            <div class="menu-buttons">
+                <button data-game="bang">BANG!</button>
+                <button data-game="rowing">ROWING RACE</button>
+                <button data-game="math">MATH DUEL</button>
+                <button data-game="color">COLOR REFLEX</button>
+                <hr>
+                <button id="shuffle-btn">SHUFFLE PLAY</button>
+            </div>
+        </div>
+
+        <!-- Game Container -->
+        <div id="game-container" class="screen hidden">
+            <button id="back-btn" class="overlay-btn">Menu</button>
+            <div id="game-canvas"></div>
+        </div>
+    </div>
+    <script type="module" src="js/main.js"></script>
+</body>
+
+</html>

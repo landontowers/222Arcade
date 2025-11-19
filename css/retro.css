@@ -1,0 +1,134 @@
+/* Retro Pixel Styles */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+    --bg-color: #222034;
+    --text-color: #cbdbfc;
+    --accent-color: #ac3232;
+    /* Red */
+    --secondary-color: #5b6ee1;
+    /* Blue */
+    --success-color: #6abe30;
+    /* Green */
+    --warning-color: #df7126;
+    /* Orange */
+    --font-family: 'Press Start 2P', cursive;
+}
+
+body {
+    image-rendering: pixelated;
+}
+
+/* CRT Scanline Effect */
+.crt::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    z-index: 2;
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+button,
+.score,
+.message {
+    font-family: var(--font-family);
+    text-transform: uppercase;
+}
+
+h1 {
+    color: var(--secondary-color);
+    text-shadow: 4px 4px 0px #000;
+    line-height: 1.5;
+    text-align: center;
+}
+
+/* Button Polish */
+button {
+    background: #3f3f74;
+    border: 4px solid #000;
+    box-shadow: inset -4px -4px 0px 0px rgba(0, 0, 0, 0.5);
+    color: #fff;
+    text-shadow: 2px 2px 0px #000;
+    transition: all 0.1s;
+}
+
+button:active {
+    transform: translateY(4px);
+    box-shadow: inset -2px -2px 0px 0px rgba(0, 0, 0, 0.5);
+}
+
+/* Game Specific Polish */
+.player-zone {
+    transition: background-color 0.1s;
+}
+
+.player-zone.p1 {
+    background-color: #306082;
+    /* Muted Blue */
+    color: #fff;
+}
+
+.player-zone.p2 {
+    background-color: #8f563b;
+    /* Muted Red/Brown */
+    color: #fff;
+}
+
+.player-zone.winner {
+    background-color: var(--success-color) !important;
+}
+
+.player-zone.loser {
+    background-color: #45283c !important;
+    /* Dark purple/grey */
+    opacity: 0.8;
+}
+
+.center-display {
+    background: #000;
+    border: 4px solid #fff;
+    box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.5);
+    color: #fff;
+    text-align: center;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.npc-sprite {
+    width: 64px;
+    height: 64px;
+    image-rendering: pixelated;
+    background-image: url('../assets/images/referee.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.speaking {
+    animation: bounce 0.2s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-4px);
+    }
+}
