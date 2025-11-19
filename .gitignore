@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# System
+.DS_Store
+Thumbs.db
+
+# Android
+android/app/build/
+android/.gradle/
+android/local.properties
+android/captures/
+*.iml
+.idea/
+
+# Capacitor
+# www/ is our source directory, so we keep it.
+# If we had a build step (e.g. webpack), we would ignore the output dir.
+
+
+# Misc
+dist/
+coverage/
+.env
+.vscode/
